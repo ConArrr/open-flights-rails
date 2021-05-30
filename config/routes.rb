@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  get "hello_world", to: 'application#hello_world'
+  namespace :api do
+    namespace :v1 do
+      resources :airlines, param: :slug
+    end
+  end
 end
